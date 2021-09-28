@@ -48,7 +48,12 @@ class HomeScreen extends StatelessWidget {
                   child: DoorLock(isLock: _controller.isBonnetLock,
                    press: _controller.updateBonnetDoorLock),
                 ),
-                
+                 Positioned(
+                  bottom: constrains.maxHeight * 0.17,
+                  child: DoorLock(isLock: _controller.isTrunkLock,
+                   press: _controller.updateTrunkDoorLock),
+                ),
+
               );
             }
           ),
