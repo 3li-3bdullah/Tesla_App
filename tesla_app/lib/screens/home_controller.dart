@@ -5,6 +5,7 @@ class HomeController extends ChangeNotifier {
   // We use home controller for logical part
   bool isRightDoorLock = true;
   bool isLeftDoorLock = true;
+  bool isBonnetLock = true;
 
   void updateRightDoorLock() {
     isRightDoorLock = !isRightDoorLock;
@@ -15,6 +16,10 @@ class HomeController extends ChangeNotifier {
 
   void updateLeftDoorLock() {
     isLeftDoorLock = !isLeftDoorLock;
+    notifyListeners();
+  }
+  void updateBonnetDoorLock() {
+    isBonnetLock = !isBonnetLock;
     notifyListeners();
   }
 }
