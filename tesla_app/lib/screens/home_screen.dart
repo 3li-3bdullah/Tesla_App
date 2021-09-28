@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tesla_app/contanins.dart';
+import 'package:tesla_app/screens/componets/tesla_bottom_navigationbar.dart';
 import '../screens/home_controller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import './componets/door_lock.dart';
+//import 'componets/tesla_bottom_navigationbar.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -16,7 +18,10 @@ class HomeScreen extends StatelessWidget {
       animation:_controller,
       builder: (context, _) {
         return Scaffold(
-           bottomNavigationBar: TeslaBottomNavigationBar(),
+           bottomNavigationBar: TeslaBottomNavigationBar(
+             onTap: (index){},
+             selectedTab: 0,
+           ),
             body: SafeArea(
           child: LayoutBuilder(builder: (context, constrains) {
               return Stack(
@@ -64,31 +69,3 @@ class HomeScreen extends StatelessWidget {
     ;
   }
 }
-
-class TeslaBottomNavigationBar extends StatelessWidget {
-  const TeslaBottomNavigationBar({
-    Key? key,
-    required this.selectedTab,
-    required this.onTap,
-  }) : super(key: key);
-  final int selectedTab;
-  final ValueChanged<int> onTap;
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.black,
-      items: List.generate(navIconSrc.length, (index) => BottomNavigationBarItem(
-      icon: SvgPicture.asset(navIconSrc[index]),
-      label: "",
-      
-      )));
-  }
-}
-List <String> navIconSrc = [
-  "assets/icons/Lock.svg",
-  "assets/icons/Charge.svg",
-  "assets/icons/Temp.svg"
-  "assets/icons/Tyre.svg"
-];
