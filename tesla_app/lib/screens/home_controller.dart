@@ -24,7 +24,7 @@ class HomeController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateTrunktDoorLock() {
+  void updateTrunkDoorLock() {
     isTrunkLock = !isTrunkLock;
     notifyListeners();
   }
