@@ -3,8 +3,9 @@ import '../../contanins.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 class DoorLock extends StatelessWidget {
   const DoorLock({
-    Key key,
-    @required HomeController controller, required this.press,required this.isLock,
+    Key? key,
+    required this.press,
+    required this.isLock,
   }) :  super(key: key);
 
  
