@@ -44,6 +44,14 @@ class HomeScreen extends StatelessWidget {
                   child: DoorLock(isLock: _controller.isLeftDoorLock,
                    press: _controller.updateLeftDoorLock),
                 ),
+                 Positioned(
+                  top: constrains.maxHeight * 0.13,
+                  // Now we need to animate the lock
+                  //Once user click on it
+                  // Now let add animation
+                  child: DoorLock(isLock: _controller.isLeftDoorLock,
+                   press: _controller.updateLeftDoorLock),
+                ),
               );
             }
           ),
