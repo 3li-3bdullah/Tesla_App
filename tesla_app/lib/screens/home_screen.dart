@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tesla_app/contanins.dart';
 import '../screens/home_controller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import './componets/door_lock.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -32,7 +33,16 @@ class HomeScreen extends StatelessWidget {
                   // Now we need to animate the lock
                   //Once user click on it
                   // Now let add animation
-                  child: DoorLock(isLock: _controller.isRightDoorLock, press: _controller.updateRightDoorLock),
+                  child: DoorLock(isLock: _controller.isRightDoorLock,
+                   press: _controller.updateRightDoorLock),
+                ),
+                Positioned(
+                  left: constrains.maxWidth * 0.05,
+                  // Now we need to animate the lock
+                  //Once user click on it
+                  // Now let add animation
+                  child: DoorLock(isLock: _controller.isRightDoorLock,
+                   press: _controller.updateRightDoorLock),
                 ),
               );
             }
