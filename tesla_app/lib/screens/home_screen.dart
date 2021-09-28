@@ -67,23 +67,28 @@ class HomeScreen extends StatelessWidget {
 
 class TeslaBottomNavigationBar extends StatelessWidget {
   const TeslaBottomNavigationBar({
-    Key key,
+    Key? key,
+    required this.selectedTab,
+    required this.onTap,
   }) : super(key: key);
-
+  final int selectedTab;
+  final ValueChanged<int> onTap;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      
+      type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.black,
-      items: [
-      BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Lock.svg"),
+      items: List.generate(navIconSrc.length, (index) => BottomNavigationBarItem(
+      icon: SvgPicture.asset(navIconSrc[index]),
       label: "",
-      ),
-      BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Charge.svg"),
-      label: "",
-      ),
-      BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Temp.svg"),
-      label: "",
-      ),
-    ],);
+      
+      )));
   }
 }
+List <String> navIconSrc = [
+  "assets/icons/Lock.svg",
+  "assets/icons/Charge.svg",
+  "assets/icons/Temp.svg"
+  "assets/icons/Tyre.svg"
+];
