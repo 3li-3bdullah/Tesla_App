@@ -30,18 +30,7 @@ class HomeScreen extends StatelessWidget {
                   // Now we need to animate the lock
                   //Once user click on it
                   // Now let add animation
-                  child: GestureDetector(
-                    onTap: _controller.updateRightDoorLock,
-                    child: AnimatedSwitcher(
-                      //Still shows no animation why? because both of them are same
-                      //widget flutter think they are same
-                      duration: defaultDuration ,
-                      child: _controller.isRightDoorLock ? SvgPicture.asset("assets/icons/door_lock.svg" ,
-                      
-                      )
-                    :SvgPicture.asset("assets/icons/door_unlock.svg"),
-                     )
-                    )
+                  child: DoorLock(controller: _controller)
                 ),
               );
             }
@@ -50,5 +39,40 @@ class HomeScreen extends StatelessWidget {
       }
     )
     ;
+  }
+}
+
+class DoorLock extends StatelessWidget {
+  const DoorLock({
+    Key key,
+    @required HomeController controller,
+  }) :  super(key: key);
+
+ 
+ final VoidCallback press;
+ final bool isLock;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press,
+      child: AnimatedSwitcher(
+        //Still shows no animation why? because both of them are same
+        //widget flutter think they are same
+        //I added key , so now flutter knows they are not same 
+        // Now its look liek what we want , but not 100%
+        // We need to add jumping effects
+        switchInCurve: Curves.easeInOutBack,
+        //This what we wnat 
+        transitionBuilder: (child, animation) => ScaleTransition(scale: animation,child:child),
+        duration: defaultDuration ,
+        child: _controller.isRightDoorLock ? SvgPicture.asset("assets/icons/door_lock.svg" ,
+        key: ValueKey("lock")
+        )
+      :SvgPicture.asset("assets/icons/door_unlock.svg",
+      key: ValueKey("unlock")
+      ),
+       )
+      );
   }
 }
