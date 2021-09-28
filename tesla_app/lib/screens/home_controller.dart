@@ -7,6 +7,6 @@ class HomeController extends ChangeNotifier {
   void updateRightDoorLock() {
     isRightDoorLock = !isRightDoorLock;
     // if you use provider then you may know this
-    // it work like setState
+    // it works like setState
   }
 }
