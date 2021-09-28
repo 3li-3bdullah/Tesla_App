@@ -66,7 +66,7 @@ class DoorLock extends StatelessWidget {
         //This what we wnat 
         transitionBuilder: (child, animation) => ScaleTransition(scale: animation,child:child),
         duration: defaultDuration ,
-        child: _controller.isRightDoorLock ? SvgPicture.asset("assets/icons/door_lock.svg" ,
+        child: isLock ? SvgPicture.asset("assets/icons/door_lock.svg" ,
         key: ValueKey("lock")
         )
       :SvgPicture.asset("assets/icons/door_unlock.svg",
