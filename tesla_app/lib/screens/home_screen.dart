@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                     width: double.infinity,
                   ),
                  )
-                ],
+                
                 Positioned(
                   right: constrains.maxWidth * 0.05,
                   // Now we need to animate the lock
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                   child: DoorLock(isLock: _controller.isTrunkLock,
                    press: _controller.updateTrunkDoorLock),
                 ),
-
+                ],
               );
             }
           ),
