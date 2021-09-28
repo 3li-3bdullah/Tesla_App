@@ -16,12 +16,7 @@ class HomeScreen extends StatelessWidget {
       animation:_controller,
       builder: (context, _) {
         return Scaffold(
-           bottomNavigationBar: BottomNavigationBar(items: [
-             BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Lock.svg"),
-             label: "",
-             ),
-             
-           ],),
+           bottomNavigationBar: TeslaBottomNavigationBar(),
             body: SafeArea(
           child: LayoutBuilder(builder: (context, constrains) {
               return Stack(
@@ -67,5 +62,28 @@ class HomeScreen extends StatelessWidget {
       }
     )
     ;
+  }
+}
+
+class TeslaBottomNavigationBar extends StatelessWidget {
+  const TeslaBottomNavigationBar({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      backgroundColor: Colors.black,
+      items: [
+      BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Lock.svg"),
+      label: "",
+      ),
+      BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Charge.svg"),
+      label: "",
+      ),
+      BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Temp.svg"),
+      label: "",
+      ),
+    ],);
   }
 }
