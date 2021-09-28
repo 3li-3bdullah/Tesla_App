@@ -41,8 +41,8 @@ class HomeScreen extends StatelessWidget {
                   // Now we need to animate the lock
                   //Once user click on it
                   // Now let add animation
-                  child: DoorLock(isLock: _controller.isRightDoorLock,
-                   press: _controller.updateRightDoorLock),
+                  child: DoorLock(isLock: _controller.isLeftDoorLock,
+                   press: _controller.updateLeftDoorLock),
                 ),
               );
             }
