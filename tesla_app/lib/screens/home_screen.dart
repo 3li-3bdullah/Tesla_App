@@ -10,12 +10,12 @@ class HomeScreen extends StatelessWidget {
             children: [
              Padding(padding: EdgeInsets.symmetric(vertical: constrains.maxHeight * 0.1 ),
              child:SvgPicture.asset(
-                "assets/icon/Car.svg",
+                "assets/icons/Car.svg",
                 width: double.infinity,
               ),
              )
             ],
-            
+            Positioned(child: SvgPicture.asset("assets/icons/door_lock.svg"),),
           );
         }
       ),
