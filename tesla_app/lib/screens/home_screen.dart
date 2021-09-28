@@ -16,6 +16,12 @@ class HomeScreen extends StatelessWidget {
       animation:_controller,
       builder: (context, _) {
         return Scaffold(
+           bottomNavigationBar: BottomNavigationBar(items: [
+             BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/Lock.svg"),
+             label: "",
+             ),
+             
+           ],),
             body: SafeArea(
           child: LayoutBuilder(builder: (context, constrains) {
               return Stack(
